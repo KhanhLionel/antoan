@@ -25,6 +25,7 @@ a {
 .card-selection-link {
     display: block;
     width: 18%;
+    flex: 0 0 18%;
     text-decoration: none;
     color: inherit;
 }
