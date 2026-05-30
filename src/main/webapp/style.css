@@ -1,8 +1,12 @@
-
 :root {
     --xanh: #438bf1;
 }
-.container{
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.container {
     padding-left: 100px;
     padding-right: 100px;
 }
@@ -12,43 +16,62 @@ a {
     color: black;
 }
 
-
-/*selection vé*/
-
 .title-selection {
     color: var(--xanh);
+    margin-top: 40px;
+    margin-bottom: 20px;
 }
+
 .list-card-selection {
     display: flex;
     justify-content: space-between;
-}
-.card-selection {
-    width: 18%;
-    height: 500px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px 0;
-    transition: 0.3s;
+    gap: 15px;
 }
 
-.card-selection:hover {
-    scale: 1.1;
+.card-selection-link {
+    display: block;
+    width: 18%;
+    flex: 0 0 18%;
+    text-decoration: none;
+    color: inherit;
+}
+
+.card-selection-link:hover .card-selection {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.card-selection {
+    width: 100%;
+    height: auto;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #ffffff;
+    overflow: hidden;
 }
 
 .card-selection img {
     width: 100%;
-    border-top-left-radius:  10px;
-    border-top-right-radius:  10px;
+    height: 140px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .card-selection p {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     text-align: center;
-    margin: 10px 0px 0px 0px;
+    margin: 15px 10px 5px 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .card-selection span {
-    font-size: 25px;
+    font-size: 18px;
     font-weight: bold;
     color: var(--xanh);
     display: block;
@@ -58,7 +81,8 @@ a {
 
 .btn-dat-ve-selection {
     text-align: center;
-    margin-top: 110px;
+    margin-top: 50px;
+    margin-bottom: 30px;
 }
 
 .btn-dat-ve-selection a {
@@ -67,88 +91,13 @@ a {
     color: white;
     font-size: 20px;
     border-radius: 30px;
+    display: inline-block;
 }
 
 .btn-dat-ve-selection a:hover {
     background-color: #337ab7;
 }
-/*end vé*/
-
-/*vé quôốc tế*/
 
 .selection-ve-quoc-te {
     margin-top: 100px;
 }
-
-/*end vé quốc tế*/
-
-/*header*/
-/*header {*/
-
-/*end header*/
-/* ----- FOOTER DESIGN ----- */
-/* ----- FOOTER DESIGN ----- */
-/*.main-footer {*/
-/*    background: #f8f9fc;*/
-/*    padding: 45px 55px; !* tăng nhẹ padding *!*/
-/*    border-top: 3px solid #007bff;*/
-/*    font-family: Arial, sans-serif;*/
-/*    margin-top: 70px;*/
-/*}*/
-
-/*!* 2 khối trái – phải *!*/
-/*.footer-container {*/
-/*    display: flex;*/
-/*    justify-content: space-between;*/
-/*    align-items: flex-start;*/
-/*    width: 100%;*/
-/*}*/
-
-/*!* 👉 Tăng cỡ chữ vừa phải *!*/
-/*.main-footer h3 {*/
-/*    color: #007bff;*/
-/*    font-size: 24px;   !* trước là 22px → tăng chút *!*/
-/*    margin-bottom: 18px;*/
-/*    font-weight: bold;*/
-/*}*/
-
-/*.footer-left ul li,*/
-/*.footer-right p {*/
-/*    font-size: 17px;   !* trước nhỏ hơn → tăng lên *!*/
-/*    line-height: 1.6;*/
-/*}*/
-
-/*!* Link *!*/
-/*.footer-left ul li a {*/
-/*    text-decoration: none;*/
-/*    color: #333;*/
-/*    font-size: 17px;   !* đồng bộ chữ menu *!*/
-/*}*/
-
-/*.footer-left ul li a:hover {*/
-/*    color: #007bff;*/
-/*    padding-left: 4px;*/
-/*}*/
-
-/*!* Icon *!*/
-/*.social-links img {*/
-/*    width: 38px;  !* tăng nhẹ để đồng bộ chữ *!*/
-/*    margin-right: 12px;*/
-/*    cursor: pointer;*/
-/*    border-radius: 8px;*/
-/*    transition: 0.3s;*/
-/*}*/
-
-/*.social-links img:hover {*/
-/*    transform: scale(1.1);*/
-/*}*/
-
-/*!* Dòng cuối *!*/
-/*.footer-bottom {*/
-/*    text-align: center;*/
-/*    margin-top: 28px;*/
-/*    padding-top: 15px;*/
-/*    border-top: 1px solid #ddd;*/
-/*    font-size: 15px;*/
-/*    color: #666;*/
-/*}*/

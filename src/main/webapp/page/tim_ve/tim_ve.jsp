@@ -68,7 +68,7 @@
 					<label>Điểm đi: </label>
                     <select name="diem_di" class="select select-diem-di" required>
                         <c:forEach var="diemDi" items="${thongTinTimVeDto.listDiemDi}">
-                            <option>
+                            <option <c:if test="${diemDi == param.diemDi}">selected</c:if>>
                                     ${diemDi}
                             </option>
                         </c:forEach>
@@ -83,7 +83,7 @@
 					<label>Điểm đến: </label>
                     <select name="diem_den" class="select select-diem-di" required>
                         <c:forEach var="diemDen" items="${thongTinTimVeDto.listDiemDen}">
-                            <option>
+                            <option <c:if test="${diemDen == param.diemDen}">selected</c:if>>
                                     ${diemDen}
                             </option>
                         </c:forEach>
