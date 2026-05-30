@@ -67,3 +67,35 @@ footer {
     font-size: 15px;
     color: #666;
 }
+
+/* ✅ Nút Back to Top - Issue #125 */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 48px;
+    height: 48px;
+    background-color: #438bf1;
+    color: #fff;
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 48px;
+    text-align: center;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(67, 139, 241, 0.45);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+    z-index: 9999;
+}
+
+#back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#back-to-top:hover {
+    background-color: #337ab7;
+    transform: scale(1.1);
+}
