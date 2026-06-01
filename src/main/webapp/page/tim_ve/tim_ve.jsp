@@ -21,6 +21,14 @@
 </div>
 <div class="container">
 	<form action="${pageContext.request.contextPath}/TimVeController" class="form-tim-ve">
+		<div style="display: flex; gap: 20px; margin-bottom: 25px; justify-content: center; font-size: 1.1rem;">
+			<label style="cursor: pointer; display: flex; align-items: center; gap: 8px;">
+				<input type="radio" name="loai_hinh" value="one_way" checked onclick="toggleReturnDate(false)"> Một chiều
+			</label>
+			<label style="cursor: pointer; display: flex; align-items: center; gap: 8px;">
+				<input type="radio" name="loai_hinh" value="round_trip" onclick="toggleReturnDate(true)"> Khứ hồi
+			</label>
+		</div>
 		<div class="form-quoc-gia">
 			<div>
 				<label>Khởi hành tại: </label>
@@ -98,9 +106,19 @@
 					<label>Chọn vé giá thấp nhất</label>
 				</div>
 			</div>
-			<div>
-				<label>Ngày khơi hành: </label>
-				<input class="input-ngay-khoi-hanh" type="date" name="ngay_di" id="">
+			<div style="display: flex; align-items: center; gap: 20px;">
+				<div>
+					<label>Ngày khơi hành: </label>
+					<input class="input-ngay-khoi-hanh" type="date" name="ngay_di" id="" required>
+				</div>
+				<div id="return-date-container" style="display: none;">
+					<label>Ngày về: </label>
+					<input class="input-ngay-khoi-hanh" type="date" name="ngay_ve" id="ngay_ve">
+					<div style="margin-top: 5px; display: flex; align-items: center; gap: 5px;">
+						<input class="cb" type="checkbox" name="ngay_ve_linh_hoat" id="ngay_ve_linh_hoat">
+						<label for="ngay_ve_linh_hoat" style="font-size: 0.9rem; color: #555; cursor: pointer;">Chọn ngày về linh hoạt (±3 ngày)</label>
+					</div>
+				</div>
 			</div>
 		</div>
 
@@ -124,6 +142,19 @@
             + "&haCanh=" + encodeURIComponent(haCanh);
 
         window.location.href = url;
+    }
+
+    function toggleReturnDate(show) {
+        var returnContainer = document.getElementById('return-date-container');
+        var ngayVeInput = document.getElementById('ngay_ve');
+        if (show) {
+            returnContainer.style.display = 'block';
+            ngayVeInput.setAttribute('required', 'required');
+        } else {
+            returnContainer.style.display = 'none';
+            ngayVeInput.removeAttribute('required');
+            ngayVeInput.value = '';
+        }
     }
 </script>
 </body>
