@@ -6,6 +6,10 @@
     --xanh: #438bf1;
 }
 
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .title {
     text-align: center;
     color: var(--xanh);

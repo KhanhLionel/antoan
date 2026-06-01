@@ -42,3 +42,25 @@
 
     </div>
 </footer>
+
+<!-- ✅ Nút Back to Top - Issue #125 -->
+<a id="back-to-top" href="#" title="Về đầu trang">&#8679;</a>
+
+<script>
+    (function () {
+        var btn = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 300) {
+                btn.classList.add('show');
+            } else {
+                btn.classList.remove('show');
+            }
+        });
+
+        btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    })();
+</script>
