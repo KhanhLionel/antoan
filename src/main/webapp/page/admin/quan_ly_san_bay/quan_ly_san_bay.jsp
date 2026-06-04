@@ -47,10 +47,10 @@
                     <td>${item.thanhPho}</td>
                     <td>${item.quocGia}</td>
                     <td style="display: flex; justify-content: center; gap: 10px;">
-                        <a href="${pageContext.request.contextPath}/admin/SuaSanBayController?id=${item.id}" class="action-btn edit">sửa</a>
+                        <a href="${pageContext.request.contextPath}/admin/SuaSanBayController?id=${item.id}" class="action-btn edit" title="Sửa">✏️</a>
                         <form action="${pageContext.request.contextPath}/admin/XoaSanBayController" method="post">
                             <input type="hidden" name="id" value="${item.id}" id="">
-                            <button type="submit">xoá</button>
+                            <button type="submit" class="action-btn delete" title="Xóa" onclick="return confirm('Bạn có chắc chắn muốn xóa sân bay này?');">🗑️</button>
                         </form>
                     </td>
                 </tr>

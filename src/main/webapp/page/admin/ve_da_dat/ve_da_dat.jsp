@@ -38,8 +38,8 @@
                 <td>2</td>
                 <td>2026-01-10 08:30</td>
                 <td class="action-cell">
-                    <button class="btn-action btn-detail">Xem</button>
-                    <button class="btn-action btn-delete">Hủy</button>
+                    <button class="btn-action btn-detail" title="Xem">📄</button>
+                    <button class="btn-action btn-delete" title="Hủy" onclick="return confirm('Bạn có chắc chắn muốn hủy đơn đặt vé này?');">🗑️</button>
                 </td>
             </tr>
 
@@ -54,8 +54,8 @@
                 <td>1</td>
                 <td>2025-12-25 14:15</td>
                 <td class="action-cell">
-                    <button class="btn-action btn-detail">Xem</button>
-                    <button class="btn-action btn-delete">Hủy</button>
+                    <button class="btn-action btn-detail" title="Xem">📄</button>
+                    <button class="btn-action btn-delete" title="Hủy" onclick="return confirm('Bạn có chắc chắn muốn hủy đơn đặt vé này?');">🗑️</button>
                 </td>
             </tr>
 

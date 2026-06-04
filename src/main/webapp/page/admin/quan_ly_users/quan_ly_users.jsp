@@ -53,9 +53,9 @@
                         <td>${user.hangXacThuc}</td>
                         <td>${user.codeXacThuc}</td>
                         <td>
-                            <a class="btn-thao-tac" href="${pageContext.request.contextPath}/admin/suaUser?id=${user.id}">Sửa</a>
-                            <a class="btn-thao-tac" href="${pageContext.request.contextPath}/admin/xemHoSo?id=${user.id}">Hồ Sơ</a>
-                            <a class="btn-thao-tac" href="${pageContext.request.contextPath}/admin/XoaUser?idUser=${user.id}">Xóa</a>
+                            <a class="btn-thao-tac btn-sua" href="${pageContext.request.contextPath}/admin/suaUser?id=${user.id}" title="Sửa">✏️</a>
+                            <a class="btn-thao-tac btn-hoso" href="${pageContext.request.contextPath}/admin/xemHoSo?id=${user.id}" title="Hồ Sơ">👤</a>
+                            <a class="btn-thao-tac btn-xoa" href="${pageContext.request.contextPath}/admin/XoaUser?idUser=${user.id}" title="Xóa" onclick="return confirm('Bạn có chắc chắn muốn xóa người dùng này?');">🗑️</a>
                         </td>
                     </tr
 
