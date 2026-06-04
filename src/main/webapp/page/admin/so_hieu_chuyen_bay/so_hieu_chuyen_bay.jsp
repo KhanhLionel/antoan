@@ -24,9 +24,12 @@
             </a>
         </div>
     </div>
-    <div>
-        <%= request.getAttribute("message")%>
-    </div>
+    <c:if test="${not empty sessionScope.messageRemove}">
+        <div>
+            ${sessionScope.messageRemove}
+        </div>
+        <c:remove var="messageRemove" scope="session" />
+    </c:if>
 <%--    <table class="example-flights">--%>
 <%--        <thead>--%>
 
@@ -84,8 +87,8 @@
                     <td>${soHieuChuyenBay.idSanBayDen}</td>
                     <td>${soHieuChuyenBay.idHangBay}</td>
                     <td style="display: flex; justify-content: center; gap: 10px;">
-                        <a href="${pageContext.request.contextPath}/admin/SuaSoHieuChuyenBayController?id=${soHieuChuyenBay.id}" class="action-btn edit">Sửa</a>
-                        <a href="${pageContext.request.contextPath}/admin/XoaSoHieuChuyenBayController?id=${soHieuChuyenBay.id}" class="action-btn delete">Xoá</a>
+                        <a href="${pageContext.request.contextPath}/admin/SuaSoHieuChuyenBayController?id=${soHieuChuyenBay.id}" class="action-btn edit" title="Sửa">✏️</a>
+                        <a href="${pageContext.request.contextPath}/admin/XoaSoHieuChuyenBayController?id=${soHieuChuyenBay.id}" class="action-btn delete" title="Xóa" onclick="return confirm('Bạn có chắc chắn muốn xóa số hiệu chuyến bay này?');">🗑️</a>
                     </td>
                 </tr>
             </c:forEach>

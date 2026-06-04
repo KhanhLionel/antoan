@@ -5,6 +5,7 @@ public class SanBay {
     private String tenSanBay;
     private String thanhPho;
     private String quocGia;
+    private int isDeleted;
 
     public SanBay() {}
 
@@ -21,4 +22,6 @@ public class SanBay {
     public void setThanhPho(String thanhPho) { this.thanhPho = thanhPho; }
     public String getQuocGia() { return quocGia; }
     public void setQuocGia(String quocGia) { this.quocGia = quocGia; }
+    public int getIsDeleted() { return isDeleted; }
+    public void setIsDeleted(int isDeleted) { this.isDeleted = isDeleted; }
 }

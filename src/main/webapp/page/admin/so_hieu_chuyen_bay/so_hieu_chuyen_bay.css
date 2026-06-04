@@ -157,26 +157,39 @@ a {
 
 
 .action-btn {
-    padding: 5px 15px;
+    padding: 6px 12px;
     border-radius: 4px;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 600;
     text-decoration: none;
-    transition: all 0.2s;
-}
-
-.action-btn.edit {
-    color: #f39c12;
-    background: rgba(243, 156, 18, 0.1);
-}
-
-.action-btn.delete {
-    color: #e74c3c;
-    background: rgba(231, 76, 60, 0.1);
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    line-height: 1.5;
+    display: inline-block;
+    color: white;
 }
 
 .action-btn:hover {
-    filter: brightness(0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    color: white;
+}
+
+.action-btn.edit {
+    background-color: #f0ad4e;
+}
+
+.action-btn.edit:hover {
+    background-color: #ec971f;
+}
+
+.action-btn.delete {
+    background-color: #d9534f;
+}
+
+.action-btn.delete:hover {
+    background-color: #c9302c;
 }
 
 

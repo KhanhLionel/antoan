@@ -11,7 +11,7 @@ public class HangBayDAO extends DBContext {
         try {
             Jdbi jdbi = get();
             List<HangBay> listHangBay = jdbi.withHandle(h -> {
-                String q = "select * from hang_bay";
+                String q = "select * from hang_bay where is_deleted = 0";
                 return h.createQuery(q).mapToBean(HangBay.class).list();
             });
             return listHangBay;
@@ -24,7 +24,7 @@ public class HangBayDAO extends DBContext {
         try {
             Jdbi jdbi = get();
             HangBay hangBay = jdbi.withHandle(h -> {
-                String q = "select * from hang_bay where id=:id";
+                String q = "select * from hang_bay where id=:id and is_deleted = 0";
                 return h.createQuery(q).bind("id", id).mapToBean(HangBay.class).one();
             });
             return hangBay;
@@ -57,7 +57,7 @@ public class HangBayDAO extends DBContext {
         try {
             Jdbi jdbi = get();
             int soLuong = jdbi.withHandle(h -> {
-                String q = "delete from hang_bay where id=:id";
+                String q = "update hang_bay set is_deleted = 1 where id=:id";
                 return h.createUpdate(q).bind("id", id).execute();
             });
             if (soLuong > 0) {
@@ -92,7 +92,7 @@ public class HangBayDAO extends DBContext {
             Jdbi jdbi = get();
             String textInput = "%" +  input + "%";
             return jdbi.withHandle(h -> {
-                String q = "select * from hang_bay where id=:input or ten_hang_bay like :textInput or quoc_gia like :textInput";
+                String q = "select * from hang_bay where (id=:input or ten_hang_bay like :textInput or quoc_gia like :textInput) and is_deleted = 0";
                 return h.createQuery(q).bind("input", input).bind("textInput", textInput).mapToBean(HangBay.class).list();
             });
         }  catch (Exception e) {

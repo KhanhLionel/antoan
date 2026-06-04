@@ -4,6 +4,7 @@ public class HangBay {
     private int id;
     private String tenHangBay;
     private String quocGia;
+    private int isDeleted;
 
     public HangBay() {}
 
@@ -18,4 +19,6 @@ public class HangBay {
     public void setTenHangBay(String tenHangBay) { this.tenHangBay = tenHangBay; }
     public String getQuocGia() { return quocGia; }
     public void setQuocGia(String quocGia) { this.quocGia = quocGia; }
+    public int getIsDeleted() { return isDeleted; }
+    public void setIsDeleted(int isDeleted) { this.isDeleted = isDeleted; }
 }

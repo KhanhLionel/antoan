@@ -22,7 +22,7 @@ public class SoHieuChuyenBayDAO extends DBContext {
         Jdbi jdbi = get();
         List<SoHieuChuyenBay> listSoHieuChuyenBay = jdbi.withHandle(h -> {
             String q = "select id as id, ma_chuyen_bay as maChuyenBay, id_san_bay_di as idSanBayDi, id_san_bay_den as idSanBayDen, id_hang_bay as idHangBay from " +
-                    "so_hieu_chuyen_bay";
+                    "so_hieu_chuyen_bay where is_deleted = 0";
             return h.createQuery(q).mapToBean(SoHieuChuyenBay.class).list();
         });
         return listSoHieuChuyenBay;
@@ -70,7 +70,7 @@ public class SoHieuChuyenBayDAO extends DBContext {
         try {
             Jdbi jdbi = get();
             List<SoHieuChuyenBay> listSoHieuChuyenBay = jdbi.withHandle(h -> {
-                String q = "select * from so_hieu_chuyen_bay where id = :id";
+                String q = "select * from so_hieu_chuyen_bay where id = :id and is_deleted = 0";
                 return h.createQuery(q).bind("id", id).mapToBean(SoHieuChuyenBay.class).list();
             });
             return listSoHieuChuyenBay.get(0);
@@ -129,7 +129,7 @@ public class SoHieuChuyenBayDAO extends DBContext {
         try {
             Jdbi jdbi = get();
             int soDong = jdbi.withHandle(h -> {
-                String q = "delete from so_hieu_chuyen_bay where id = :id";
+                String q = "update so_hieu_chuyen_bay set is_deleted = 1 where id = :id";
                 return h.createUpdate(q).bind("id", id).execute();
             });
             if (soDong == 1) {
@@ -147,8 +147,8 @@ public class SoHieuChuyenBayDAO extends DBContext {
             Jdbi jdbi = get();
             String maChuyenBay = "%" + input.strip() + "%";
             return jdbi.withHandle(h -> {
-                String q = "select * from so_hieu_chuyen_bay where id = :input or ma_chuyen_bay like :maChuyenBay or " +
-                        "id_san_bay_di = :input or id_san_bay_den = :input or id_hang_bay = :input";
+                String q = "select * from so_hieu_chuyen_bay where (id = :input or ma_chuyen_bay like :maChuyenBay or " +
+                        "id_san_bay_di = :input or id_san_bay_den = :input or id_hang_bay = :input) and is_deleted = 0";
                 return h.createQuery(q).bind("input", input).bind("maChuyenBay", maChuyenBay).mapToBean(SoHieuChuyenBay.class).list();
             });
         }  catch (Exception e) {

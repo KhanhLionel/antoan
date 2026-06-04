@@ -81,17 +81,48 @@ table th {
 
 
 .btn-thao-tac {
-    padding: 5px 8px;
+    padding: 6px 12px;
     margin-right: 5px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+    border: none;
     cursor: pointer;
-    background-color: #f8f8f8;
-    transition: background-color 0.2s;
+    line-height: 1.5;
+    display: inline-block;
 }
 
-table button:hover {
-    background-color: #e9e9e9;
+.btn-thao-tac:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    color: white;
+}
+
+.btn-sua {
+    background-color: #f0ad4e;
+}
+
+.btn-sua:hover {
+    background-color: #ec971f;
+}
+
+.btn-hoso {
+    background-color: #17a2b8;
+}
+
+.btn-hoso:hover {
+    background-color: #138496;
+}
+
+.btn-xoa {
+    background-color: #d9534f;
+}
+
+.btn-xoa:hover {
+    background-color: #c9302c;
 }
 
 

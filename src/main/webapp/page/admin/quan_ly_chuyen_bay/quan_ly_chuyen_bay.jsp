@@ -25,10 +25,14 @@
         </div>
     </div>
 
-    <table class="flights">
+    <c:if test="${not empty sessionScope.messageRemove}">
         <div>
             ${sessionScope.messageRemove}
         </div>
+        <c:remove var="messageRemove" scope="session" />
+    </c:if>
+
+    <table class="flights">
         <thead>
         <tr>
             <th style="text-align: center">ID</th>
@@ -48,10 +52,10 @@
                 <td style="text-align: center">${item.idSoHieuChuyenBay}</td>
                 <td style="text-align: center">
                     <div class="act-btns">
-                        <a href="${pageContext.request.contextPath}/admin/SuaChuyenBayController?id=${item.id}" class="btn-act btn-edit">Sửa</a>
+                        <a href="${pageContext.request.contextPath}/admin/SuaChuyenBayController?id=${item.id}" class="btn-act btn-edit" title="Sửa">✏️</a>
                         <form action="${pageContext.request.contextPath}/admin/XoaChuyenBayController" method="post">
                             <input type="hidden" name="id" value="${item.id}">
-                            <button class="btn-act btn-delete">Xóa</button>
+                            <button class="btn-act btn-delete" title="Xóa" onclick="return confirm('Bạn có chắc chắn muốn xóa chuyến bay này?');">🗑️</button>
                         </form>
                     </div>
                 </td>

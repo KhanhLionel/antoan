@@ -44,9 +44,9 @@
                 <td class="text-3cham">${loaiVe.tenLoaiVe}</td>
                 <td class="text-3cham">${loaiVe.moTa}</td>
                 <td>
-                    <a href="${pageContext.request.contextPath}/admin/SuaLoaiVeController?id=${loaiVe.id}" class="btn-thao-tac btn-sua">Sửa</a>
-                    <a href="${pageContext.request.contextPath}/admin/XemHoSoLoaiVeController?id=${loaiVe.id}" class="btn-thao-tac btn-hoso">Hồ Sơ</a>
-                    <a class="btn-thao-tac btn-xoa" href="${pageContext.request.contextPath}/admin/XoaLoaiVe?idLoaiVe=${loaiVe.id}">Xóa</a>
+                    <a href="${pageContext.request.contextPath}/admin/SuaLoaiVeController?id=${loaiVe.id}" class="btn-thao-tac btn-sua" title="Sửa">✏️</a>
+                    <a href="${pageContext.request.contextPath}/admin/XemHoSoLoaiVeController?id=${loaiVe.id}" class="btn-thao-tac btn-hoso" title="Hồ Sơ">👤</a>
+                    <a class="btn-thao-tac btn-xoa" href="${pageContext.request.contextPath}/admin/XoaLoaiVe?idLoaiVe=${loaiVe.id}" title="Xóa" onclick="return confirm('Bạn có chắc chắn muốn xóa loại vé này?');">🗑️</a>
                 </td>
             </tr>
 

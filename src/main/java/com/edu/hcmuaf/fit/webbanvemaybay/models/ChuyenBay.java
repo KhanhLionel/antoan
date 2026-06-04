@@ -5,6 +5,7 @@ public class ChuyenBay {
     private String thoiGianKhoiHanh;
     private String thoiGianHaCanh;
     private int idSoHieuChuyenBay;
+    private int isDeleted;
 
     public ChuyenBay() {}
 
@@ -28,4 +29,6 @@ public class ChuyenBay {
     public void setIdSoHieuChuyenBay(int idSoHieuChuyenBay) {
         this.idSoHieuChuyenBay = idSoHieuChuyenBay;
     }
+    public int getIsDeleted() { return isDeleted; }
+    public void setIsDeleted(int isDeleted) { this.isDeleted = isDeleted; }
 }

@@ -6,6 +6,7 @@ public class SoHieuChuyenBay {
     private int idSanBayDi;
     private int idSanBayDen;
     private int idHangBay;
+    private int isDeleted;
 
     public SoHieuChuyenBay() {}
     public int getId() {
@@ -29,4 +30,6 @@ public class SoHieuChuyenBay {
     public void setIdHangBay(int idHangBay) {
         this.idHangBay = idHangBay;
     }
+    public int getIsDeleted() { return isDeleted; }
+    public void setIsDeleted(int isDeleted) { this.isDeleted = isDeleted; }
 }

@@ -11,7 +11,7 @@ public class ChuyenBayDAO extends DBContext {
         try {
             Jdbi jdbi = get();
             return jdbi.withHandle(h -> {
-                String q = "select * from chuyen_bay LIMIT :limit OFFSET :offset";
+                String q = "select * from chuyen_bay where is_deleted = 0 LIMIT :limit OFFSET :offset";
                 return h.createQuery(q)
                         .bind("limit", pageSize)
                         .bind("offset", offset)
@@ -28,7 +28,7 @@ public class ChuyenBayDAO extends DBContext {
         try {
             Jdbi jdbi = get();
             return jdbi.withHandle(h ->
-                    h.createQuery("select count(*) from chuyen_bay").mapTo(Integer.class).one()
+                    h.createQuery("select count(*) from chuyen_bay where is_deleted = 0").mapTo(Integer.class).one()
             );
         } catch (Exception e) {
             return 0;
@@ -54,7 +54,7 @@ public class ChuyenBayDAO extends DBContext {
         try {
             Jdbi jdbi = get();
             return jdbi.withHandle(h -> {
-                String q = "select * from chuyen_bay where id = :id";
+                String q = "select * from chuyen_bay where id = :id and is_deleted = 0";
                 return h.createQuery(q).bind("id", id).mapToBean(ChuyenBay.class).findFirst().orElse(null);
             });
         } catch (Exception e) {
@@ -85,7 +85,7 @@ public class ChuyenBayDAO extends DBContext {
         try {
             Jdbi jdbi = get();
             return jdbi.withHandle(h -> {
-                String q = "delete from chuyen_bay where id = :id";
+                String q = "update chuyen_bay set is_deleted = 1 where id = :id";
                 return h.createUpdate(q).bind("id", id).execute();
             }) > 0;
         } catch (Exception e) {
@@ -99,8 +99,8 @@ public class ChuyenBayDAO extends DBContext {
             Jdbi jdbi = get();
             String textInput = "%" + input + "%";
             return jdbi.withHandle(h -> {
-                String q = "select * from chuyen_bay where id = :input or thoi_gian_khoi_hanh = :textInput or thoi_gian_ha_canh = :textInput or " +
-                        "id_so_hieu_chuyen_bay = :input limit :limit offset :offset";
+                String q = "select * from chuyen_bay where (id = :input or thoi_gian_khoi_hanh = :textInput or thoi_gian_ha_canh = :textInput or " +
+                        "id_so_hieu_chuyen_bay = :input) and is_deleted = 0 limit :limit offset :offset";
                 return h.createQuery(q)
                         .bind("input", input)
                         .bind("textInput", textInput)
@@ -119,8 +119,8 @@ public class ChuyenBayDAO extends DBContext {
         try {
             Jdbi jdbi = get();
             return jdbi.withHandle(h -> {
-                String q = "select * from chuyen_bay where id = :input or thoi_gian_khoi_hanh = :textInput or " +
-                        "thoi_gian_ha_canh = :textInput or + id_so_hieu_chuyen_bay = :input";
+                String q = "select count(*) from chuyen_bay where (id = :input or thoi_gian_khoi_hanh = :textInput or " +
+                        "thoi_gian_ha_canh = :textInput or id_so_hieu_chuyen_bay = :input) and is_deleted = 0";
                 return h.createQuery(q)
                         .bind("input", input)
                         .mapTo(Integer.class).one();

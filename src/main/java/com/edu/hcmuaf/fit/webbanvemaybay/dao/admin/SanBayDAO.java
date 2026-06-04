@@ -11,7 +11,7 @@ public class SanBayDAO extends DBContext {
         try {
             Jdbi jdbi = get();
             List<SanBay> listSanBay = jdbi.withHandle(h -> {
-                String q = "select * from san_bay";
+                String q = "select * from san_bay where is_deleted = 0";
                 return h.createQuery(q).mapToBean(SanBay.class).list();
             });
             return listSanBay;
@@ -39,7 +39,7 @@ public class SanBayDAO extends DBContext {
         try {
             Jdbi jdbi = get();
             SanBay sanBay = jdbi.withHandle(h -> {
-                String q = "select * from san_bay where id = :id";
+                String q = "select * from san_bay where id = :id and is_deleted = 0";
                 return h.createQuery(q).bind("id", id).mapToBean(SanBay.class).findFirst().orElse(null);
             });
             return sanBay;
@@ -67,7 +67,7 @@ public class SanBayDAO extends DBContext {
         try {
             Jdbi jdbi = get();
             int soLuong = jdbi.withHandle(h -> {
-                String q = "delete from san_bay where id = :id";
+                String q = "update san_bay set is_deleted = 1 where id = :id";
                 return h.createUpdate(q).bind("id", id).execute();
             });
             return soLuong > 0;
@@ -82,7 +82,7 @@ public class SanBayDAO extends DBContext {
             Jdbi jdbi = get();
             String textInput = "%" +  input + "%";
             return jdbi.withHandle(h -> {
-                String q = "select * from san_bay where id=:input or ten_san_bay like :textInput or thanh_pho like :textInput or quoc_gia like :textInput";
+                String q = "select * from san_bay where (id=:input or ten_san_bay like :textInput or thanh_pho like :textInput or quoc_gia like :textInput) and is_deleted = 0";
                 return h.createQuery(q).bind("input", input).bind("textInput", textInput).mapToBean(SanBay.class).list();
             });
         } catch (Exception e) {
