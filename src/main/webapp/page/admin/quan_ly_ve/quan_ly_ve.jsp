@@ -25,10 +25,14 @@
             </div>
         </div>
 
-        <table class="flights">
+        <c:if test="${not empty sessionScope.messageRemove}">
             <div>
                 ${sessionScope.messageRemove}
             </div>
+            <c:remove var="messageRemove" scope="session" />
+        </c:if>
+
+        <table class="flights">
             <thead>
                 <tr>
                     <th style="text-align: center">ID</th>

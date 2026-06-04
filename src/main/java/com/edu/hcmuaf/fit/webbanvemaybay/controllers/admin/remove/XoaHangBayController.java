@@ -19,10 +19,11 @@ public class XoaHangBayController extends HttpServlet {
 
         HangBayService hangBayService = new HangBayService();
         boolean isRemove = hangBayService.removeHangBayById(id);
+        HttpSession session = request.getSession();
         if (isRemove) {
-            request.setAttribute("message", "xoá thành công");
+            session.setAttribute("messageRemove", "xoá thành công");
         } else {
-            request.setAttribute("message", "xoá thất bại");
+            session.setAttribute("messageRemove", "xoá thất bại");
         }
         response.sendRedirect(request.getContextPath() + "/admin/HangBayController");
     }

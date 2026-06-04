@@ -24,9 +24,12 @@
             </a>
         </div>
     </div>
-    <div>
-        ${sessionScope.messageRemove}
-    </div>
+    <c:if test="${not empty sessionScope.messageRemove}">
+        <div>
+            ${sessionScope.messageRemove}
+        </div>
+        <c:remove var="messageRemove" scope="session" />
+    </c:if>
 
     <div class="table-container">
         <table class="example-flights" id="flightTable">

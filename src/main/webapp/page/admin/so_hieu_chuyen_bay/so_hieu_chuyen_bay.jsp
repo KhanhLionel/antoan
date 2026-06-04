@@ -24,9 +24,12 @@
             </a>
         </div>
     </div>
-    <div>
-        <%= request.getAttribute("message")%>
-    </div>
+    <c:if test="${not empty sessionScope.messageRemove}">
+        <div>
+            ${sessionScope.messageRemove}
+        </div>
+        <c:remove var="messageRemove" scope="session" />
+    </c:if>
 <%--    <table class="example-flights">--%>
 <%--        <thead>--%>
 

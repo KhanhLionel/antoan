@@ -14,8 +14,9 @@ public class XoaSoHieuChuyenBayController extends HttpServlet {
         String id =  request.getParameter("id");
         SoHieuChuyenBayService soHieuChuyenBayService = new SoHieuChuyenBayService();
         String message = soHieuChuyenBayService.deleteSoHieuChuyenBayById(id);
-        request.setAttribute("message", message);
-        request.getRequestDispatcher("/admin/SoHieuChuyenBayController").forward(request, response);
+        HttpSession session = request.getSession();
+        session.setAttribute("messageRemove", message);
+        response.sendRedirect(request.getContextPath() + "/admin/SoHieuChuyenBayController");
     }
 
     @Override
