@@ -61,6 +61,100 @@
 
 <div>
     <div class="container">
+	<div class="slideshow-container" style="position: relative; max-width: 100%; height: 400px; overflow: hidden; margin-top: 20px; margin-bottom: 20px; border-radius: 12px; box-shadow: 0 6px 15px rgba(0,0,0,0.15);">
+		<div class="mySlides fade" style="display: none; height: 100%;">
+			<img src="${pageContext.request.contextPath}/access/trang_chu/anh-sai-gon.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+			<div class="slide-text" style="position: absolute; bottom: 30px; left: 30px; color: white; background: rgba(0,0,0,0.6); padding: 12px 20px; border-radius: 6px; font-family: Arial, sans-serif;">
+				<h2 style="margin: 0 0 5px 0; font-size: 22px;">Khám Phá Sài Gòn Năng Động</h2>
+				<p style="margin: 0; font-size: 13px;">Trải nghiệm nhịp sống đô thị sôi động bậc nhất Việt Nam</p>
+			</div>
+		</div>
+		<div class="mySlides fade" style="display: none; height: 100%;">
+			<img src="${pageContext.request.contextPath}/access/trang_chu/anh-trungquoc.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+			<div class="slide-text" style="position: absolute; bottom: 30px; left: 30px; color: white; background: rgba(0,0,0,0.6); padding: 12px 20px; border-radius: 6px; font-family: Arial, sans-serif;">
+				<h2 style="margin: 0 0 5px 0; font-size: 22px;">Vẻ Đẹp Trung Hoa Kỳ Vĩ</h2>
+				<p style="margin: 0; font-size: 13px;">Ghé thăm những địa danh lịch sử và phong cảnh tuyệt đẹp</p>
+			</div>
+		</div>
+		<div class="mySlides fade" style="display: none; height: 100%;">
+			<img src="${pageContext.request.contextPath}/access/trang_chu/anh-bulgaria.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+			<div class="slide-text" style="position: absolute; bottom: 30px; left: 30px; color: white; background: rgba(0,0,0,0.6); padding: 12px 20px; border-radius: 6px; font-family: Arial, sans-serif;">
+				<h2 style="margin: 0 0 5px 0; font-size: 22px;">Hương Sắc Hoa Hồng Bulgaria</h2>
+				<p style="margin: 0; font-size: 13px;">Khám phá nét cổ kính và lãng mạn của châu Âu</p>
+			</div>
+		</div>
+		<div class="mySlides fade" style="display: none; height: 100%;">
+			<img src="${pageContext.request.contextPath}/access/trang_chu/anh-da-nang.webp" style="width: 100%; height: 100%; object-fit: cover;">
+			<div class="slide-text" style="position: absolute; bottom: 30px; left: 30px; color: white; background: rgba(0,0,0,0.6); padding: 12px 20px; border-radius: 6px; font-family: Arial, sans-serif;">
+				<h2 style="margin: 0 0 5px 0; font-size: 22px;">Thành Phố Đáng Sống Đà Nẵng</h2>
+				<p style="margin: 0; font-size: 13px;">Hành trình thư giãn bên bãi biển tuyệt đẹp và các cây cầu lung linh</p>
+			</div>
+		</div>
+
+		<a class="prev-slide" onclick="plusSlides(-1)" style="cursor: pointer; position: absolute; top: 50%; width: auto; margin-top: -22px; padding: 16px; color: white; font-weight: bold; font-size: 18px; transition: 0.6s ease; border-radius: 0 3px 3px 0; user-select: none; background: rgba(0,0,0,0.3); left: 0;">&#10094;</a>
+		<a class="next-slide" onclick="plusSlides(1)" style="cursor: pointer; position: absolute; top: 50%; width: auto; margin-top: -22px; padding: 16px; color: white; font-weight: bold; font-size: 18px; transition: 0.6s ease; border-radius: 3px 0 0 3px; user-select: none; background: rgba(0,0,0,0.3); right: 0;">&#10095;</a>
+	</div>
+
+	<div style="text-align:center; margin-bottom: 20px;">
+		<span class="slide-dot" onclick="currentSlide(1)" style="cursor: pointer; height: 10px; width: 10px; margin: 0 2px; background-color: #bbb; border-radius: 50%; display: inline-block; transition: background-color 0.6s ease;"></span>
+		<span class="slide-dot" onclick="currentSlide(2)" style="cursor: pointer; height: 10px; width: 10px; margin: 0 2px; background-color: #bbb; border-radius: 50%; display: inline-block; transition: background-color 0.6s ease;"></span>
+		<span class="slide-dot" onclick="currentSlide(3)" style="cursor: pointer; height: 10px; width: 10px; margin: 0 2px; background-color: #bbb; border-radius: 50%; display: inline-block; transition: background-color 0.6s ease;"></span>
+		<span class="slide-dot" onclick="currentSlide(4)" style="cursor: pointer; height: 10px; width: 10px; margin: 0 2px; background-color: #bbb; border-radius: 50%; display: inline-block; transition: background-color 0.6s ease;"></span>
+	</div>
+
+	<style>
+		.fade {
+			animation-name: slideFade;
+			animation-duration: 1.5s;
+		}
+		@keyframes slideFade {
+			from {opacity: .4}
+			to {opacity: 1}
+		}
+	</style>
+
+	<script>
+		let slideIndex = 0;
+		let slideTimeout;
+		showSlides();
+
+		function showSlides() {
+			let i;
+			let slides = document.getElementsByClassName("mySlides");
+			let dots = document.getElementsByClassName("slide-dot");
+			for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";
+			}
+			slideIndex++;
+			if (slideIndex > slides.length) {slideIndex = 1}
+			for (i = 0; i < dots.length; i++) {
+				dots[i].style.backgroundColor = "#bbb";
+			}
+			if (slides[slideIndex-1]) {
+				slides[slideIndex-1].style.display = "block";
+			}
+			if (dots[slideIndex-1]) {
+				dots[slideIndex-1].style.backgroundColor = "#438bf1";
+			}
+			slideTimeout = setTimeout(showSlides, 4000);
+		}
+
+		function plusSlides(n) {
+			clearTimeout(slideTimeout);
+			let slides = document.getElementsByClassName("mySlides");
+			slideIndex += n - 1;
+			if (slideIndex < 0) {
+				slideIndex = slides.length - 1;
+			}
+			showSlides();
+		}
+
+		function currentSlide(n) {
+			clearTimeout(slideTimeout);
+			slideIndex = n - 1;
+			showSlides();
+		}
+	</script>
 		<div class="title-selection">
 			<h1>Chuyến bay nội địa nổi bật</h1>
 		</div>

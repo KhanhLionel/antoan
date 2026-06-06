@@ -66,6 +66,17 @@ public class FooterInfoFilter implements Filter {
             req.setAttribute("listDeXuatVe", listDeXuatVe);
         }
 
+        if (uri.endsWith("ve_noi_dia.jsp")) {
+            com.edu.hcmuaf.fit.webbanvemaybay.dao.VeDAO veDAO = new com.edu.hcmuaf.fit.webbanvemaybay.dao.VeDAO();
+            List<VeDto> listVe = veDAO.getListVeNoiDia();
+            req.setAttribute("listVeNoiDia", listVe);
+        } else if (uri.endsWith("ve_quoc_te.jsp")) {
+            com.edu.hcmuaf.fit.webbanvemaybay.dao.VeDAO veDAO = new com.edu.hcmuaf.fit.webbanvemaybay.dao.VeDAO();
+            List<VeDto> listVe = veDAO.getListVeQuocTe();
+            req.setAttribute("listVeQuocTe", listVe);
+        }
+
+
         chain.doFilter(request, response);
     }
 }

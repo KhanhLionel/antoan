@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Title</title>
+	<title>Vé Máy Bay Quốc Tế</title>
     <link rel="stylesheet" href="ve_quoc_te.css">
 	<link rel="stylesheet" href="../../layout/StyleHeader.css">
 	<link rel="stylesheet" href="../../layout/StyleFooter.css">
@@ -13,63 +13,80 @@
 <!--start header-->
 <%@include file="../../layout/Header.jsp"%>
 
-
 <!--main-->
 <main class="container">
     <h1 class="page-title">Vé Máy Bay Quốc Tế</h1>
     <div class="articles">
-        <article class="article">
-            <div class="picture">
-                <img class="" src="../../access/trang_chu/anh-jarkata.webp">
+        <c:if test="${empty listVeQuocTe}">
+            <div style="text-align: center; padding: 40px; font-size: 18px; color: #666; width: 100%;">
+                Hiện tại chưa có chuyến bay quốc tế nào hoạt động.
             </div>
-            <div class="infomations">
-                <h2>Vé máy bay Sài Gòn đi Jakarta mới cập nhật</h2>
-                <p>Tháng 11 này năm 2025, hãng hàng không Vietnam Airlines tiếp tục khai thác đường bay từ Việt Nam đi Indonesia, cụ thể là chặng Sài Gòn – Jakarta với tần suất 3 chuyến mỗi tuần. Quý khách có thể thoải mái lựa chọn hành trình thuận tiện để khám phá Jakarta – thành phố hiện đại sôi động bậc nhất Đông Nam Á, nơi những tòa nhà cao tầng xen lẫn đền đài cổ kính và ẩm thực đường phố hấp dẫn. Với mức giá ưu đãi và dịch vụ chất lượng, đây là thời điểm lý tưởng để bạn đặt vé và tận hưởng chuyến bay trọn vẹn đến thủ đô xinh đẹp của Indonesia.</p>
-            </div>
-        </article>
-
-        <article class="article">
-            <div class="picture">
-                <img class="" src="../../access/trang_chu/anh-trungquoc.jpg">
-            </div>
-            <div class="infomations">
-                <h2>Vé máy bay đi Trung Quốc bao nhiêu tiền?</h2>
-                <p>Đây là thắc mắc của không ít người khi bắt đầu cho một kế hoạch “săn” vé để đi công tác, du lịch hay thăm viếng người thân tại đất nước Trung Hoa. Hiểu được những trăn trở đó của quý khách hàng, hôm nay xin gửi đến quý khách thông tin cập nhật mới nhất về giá vé máy bay đi Trung Quốc để dễ dàng lựa chọn hành trình phù hợp. Hiện nay, các chặng bay từ Việt Nam đi Trung Quốc như Hà Nội – Bắc Kinh, Sài Gòn – Thượng Hải hay Đà Nẵng – Quảng Châu được nhiều hãng hàng không khai thác với mức giá dao động từ khoảng 3.000.000 đến 7.000.000 đồng tùy thời điểm và hạng vé. Ngoài ra, vào những dịp cao điểm lễ Tết hoặc mùa du lịch, giá vé có thể tăng nhẹ, vì vậy quý khách nên đặt sớm để được mức giá ưu đãi nhất. Với thời gian bay trung bình từ 2 đến 4 tiếng và tần suất chuyến bay dày đặc, việc di chuyển giữa Việt Nam và Trung Quốc nay đã trở nên dễ dàng, nhanh chóng và thuận tiện hơn bao giờ hết.</p>
-            </div>
-        </article>
-
-        <article class="article">
-            <div class="picture">
-                <img class="" src="../../access/trang_chu/anh-argentina.jpg">
-            </div>
-            <div class="infomations">
-                <h2>Vé máy bay đi Argentina mới cập nhật</h2>
-                <p>Argentina có nền văn hóa lâu đời, những công trình kiến trúc cổ kính không kém phần thanh lịch và những địa danh tham quan vô cùng tuyệt đẹp. Bạn có thể bắt đầu hành trình khám phá đất nước Nam Mỹ xinh đẹp này với những trải nghiệm đáng nhớ như chiêm ngưỡng vũ điệu tango quyến rũ trên đường phố Buenos Aires, thưởng thức thịt bò nướng trứ danh hay ghé thăm thác Iguazu – kỳ quan thiên nhiên hùng vĩ nằm giữa biên giới Argentina và Brazil. Vé máy bay đi Argentina hiện được nhiều hãng hàng không quốc tế khai thác với mức giá linh hoạt, dao động từ 25 đến 40 triệu đồng cho hành trình khứ hồi từ Việt Nam, tùy vào thời điểm và hãng bay. Với các đường bay nối chuyến thuận tiện qua Doha, Dubai hoặc Paris, việc di chuyển đến Argentina nay trở nên dễ dàng hơn bao giờ hết, hứa hẹn mang đến cho bạn một chuyến đi trọn vẹn để khám phá thiên nhiên, con người và văn hóa nồng nhiệt của xứ sở tango.</p>
-            </div>
-        </article>
-
-        <article class="article">
-            <div class="picture">
-                <img class="" src="../../access/trang_chu/anh-bulgaria.jpg">
-            </div>
-            <div class="infomations">
-                <h2>Vé máy bay đi Bulgaria mới cập nhật</h2>
-                <p>Bulgaria là một đất nước nằm ở khu vực châu Âu có truyền thống và lịch sử lâu đời, nổi tiếng với những ngôi làng cổ kính, nhà thờ mái vòm đặc trưng và phong cảnh thiên nhiên hùng vĩ. Nếu bạn đang có dự định đặt vé máy bay đi Bulgaria, hãy sẵn sàng cho một hành trình khám phá đất nước xinh đẹp bên bờ Biển Đen này. Du khách có thể ghé thăm thủ đô Sofia – trung tâm văn hóa và lịch sử với những di tích La Mã cổ, quảng trường Alexander Nevsky tráng lệ, hay dạo bước trong phố cổ Plovdiv yên bình. Vé máy bay đi Bulgaria hiện được nhiều hãng hàng không quốc tế khai thác với giá dao động từ 18 đến 30 triệu đồng cho hành trình khứ hồi từ Việt Nam, tùy theo thời điểm và hãng bay. Với các tuyến nối chuyến phổ biến qua Doha, Istanbul hoặc Frankfurt, việc đến với Bulgaria nay đã trở nên dễ dàng và thuận tiện hơn bao giờ hết.</p>
-            </div>
-        </article>
-
-        <article class="article">
-            <div class="picture">
-                <img class="" src="../../access/trang_chu/anh-brunei.jpg">
-            </div>
-            <div class="infomations">
-                <h2>Vé máy bay đi Brunei mới cập nhật</h2>
-                <p>Brunei là một đất nước nhỏ xinh nằm ở khu vực Đông Nam Á, nổi tiếng với sự giàu có, yên bình và nét đẹp văn hóa Hồi giáo đặc trưng. Du khách có thể chiêm ngưỡng những công trình nguy nga như thánh đường Sultan Omar Ali Saifuddien với mái vòm vàng rực rỡ, tham quan cung điện Hoàng gia Istana Nurul Iman – một trong những dinh thự lớn nhất thế giới, hoặc dạo chơi tại làng nổi Kampong Ayer bình yên. Vé máy bay đi Brunei hiện có giá dao động từ 6 đến 12 triệu đồng cho hành trình khứ hồi, tùy vào thời điểm và hãng bay. Với thời gian bay ngắn chỉ khoảng 2 đến 3 tiếng từ Việt Nam, đây là lựa chọn lý tưởng cho những ai muốn tận hưởng một chuyến đi nhẹ nhàng, sang trọng và đậm đà bản sắc Đông Nam Á.</p>
-            </div>
-        </article>
+        </c:if>
+        <c:forEach var="ve" items="${listVeQuocTe}">
+            <article class="article" style="margin-bottom: 20px; border: 1px solid #eee;">
+                <div class="picture" style="min-width: 220px; max-width: 220px;">
+                    <c:choose>
+                        <c:when test="${ve.haCanh.contains('Argentina')}">
+                            <img src="${pageContext.request.contextPath}/access/trang_chu/anh-argentina.jpg" alt="">
+                        </c:when>
+                        <c:when test="${ve.haCanh.contains('Brunei')}">
+                            <img src="${pageContext.request.contextPath}/access/trang_chu/anh-brunei.jpg" alt="">
+                        </c:when>
+                        <c:when test="${ve.haCanh.contains('Bulgaria')}">
+                            <img src="${pageContext.request.contextPath}/access/trang_chu/anh-bulgaria.jpg" alt="">
+                        </c:when>
+                        <c:when test="${ve.haCanh.contains('Indonesia')}">
+                            <img src="${pageContext.request.contextPath}/access/trang_chu/anh-jarkata.webp" alt="">
+                        </c:when>
+                        <c:when test="${ve.haCanh.contains('Hoa Kỳ') || ve.haCanh.contains('Mỹ')}">
+                            <img src="${pageContext.request.contextPath}/access/trang_chu/anh-mi.webp" alt="">
+                        </c:when>
+                        <c:when test="${ve.haCanh.contains('Nhật Bản')}">
+                            <img src="${pageContext.request.contextPath}/access/trang_chu/anh-nhat-ban.webp" alt="">
+                        </c:when>
+                        <c:when test="${ve.haCanh.contains('Pháp')}">
+                            <img src="${pageContext.request.contextPath}/access/trang_chu/anh-phap.webp" alt="">
+                        </c:when>
+                        <c:when test="${ve.haCanh.contains('Trung Quốc')}">
+                            <img src="${pageContext.request.contextPath}/access/trang_chu/anh-trungquoc.jpg" alt="">
+                        </c:when>
+                        <c:when test="${ve.haCanh.contains('Singapore')}">
+                            <img src="${pageContext.request.contextPath}/access/trang_chu/anh-singapore.webp" alt="">
+                        </c:when>
+                        <c:when test="${ve.haCanh.contains('Úc')}">
+                            <img src="${pageContext.request.contextPath}/access/trang_chu/anh-uc.webp" alt="">
+                        </c:when>
+                        <c:otherwise>
+                            <img src="${pageContext.request.contextPath}/access/trang_chu/anh-jarkata.webp" alt="">
+                        </c:otherwise>
+                    </c:choose>
+                </div>
+                <div class="infomations" style="display: flex; flex-direction: column; justify-content: space-between; width: 100%; padding: 20px;">
+                    <div>
+                        <h2 style="font-size: 22px; color: #438bf1; margin-bottom: 8px;">
+                            ${ve.diemDi} ➔ ${ve.diemDen}
+                        </h2>
+                        <div style="font-size: 14px; color: #555; margin-bottom: 12px;">
+                            <strong>Hãng bay:</strong> ${ve.hangBay} (${ve.soHieuChuyenBay}) | <strong>Hạng ghế:</strong> ${ve.hangGhe}
+                        </div>
+                        <div style="font-size: 14px; color: #666; line-height: 1.6;">
+                            <div><strong>Sân bay đi:</strong> ${ve.sanBayDi} (${ve.diemDi}) | <strong>Giờ bay:</strong> ${ve.thoiGianKhoiHanh}</div>
+                            <div><strong>Sân bay đến:</strong> ${ve.sanBayDen} (${ve.diemDen}) | <strong>Giờ hạ cánh:</strong> ${ve.thoiGianHaCanh}</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px; border-top: 1px dashed #ddd; padding-top: 15px;">
+                        <span style="font-size: 22px; font-weight: bold; color: #ff5722;">${ve.gia}đ</span>
+                        <a href="${pageContext.request.contextPath}/DatVeController?idVe=${ve.idVe}&soLuong=1" style="background-color: #438bf1; color: white; padding: 10px 24px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 15px; transition: background-color 0.2s;">
+                            Đặt Vé Ngay
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </c:forEach>
     </div>
 </main>
-<!--end header-->
+<!--end main-->
+
 <%@include file="../../layout/Footer.jsp"%>
 </body>
 </html>
