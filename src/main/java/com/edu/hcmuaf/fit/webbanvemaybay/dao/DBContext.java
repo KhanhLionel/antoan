@@ -13,7 +13,7 @@ public class DBContext {
             MysqlDataSource dataSource = new MysqlDataSource();
             dataSource.setURL("jdbc:mysql://localhost:3306/db");
             dataSource.setUser("root");
-            dataSource.setPassword("");
+            dataSource.setPassword("123456");
 
             jdbi = Jdbi.create(dataSource);
             jdbi.installPlugin(new SqlObjectPlugin());
