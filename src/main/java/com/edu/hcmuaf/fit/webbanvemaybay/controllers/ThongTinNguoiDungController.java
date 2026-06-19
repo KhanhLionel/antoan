@@ -25,6 +25,9 @@ public class ThongTinNguoiDungController extends HttpServlet {
         User user = userService.getUserById(id);
         ThongTinNguoiDungService thongTinNguoiDungService = new ThongTinNguoiDungService();
         ThongTinNguoiDung thongTinNguoiDung = thongTinNguoiDungService.getThongTinNguoiDungByIdUser(id);
+        UserKeyDao keyDAO = new UserKeyDao();
+        boolean hasKey = keyDAO.hasActiveKey(a);
+        request.setAttribute("hasActiveKey", hasKey);
         request.setAttribute("info", thongTinNguoiDung);
         request.setAttribute("user", user);
         request.getRequestDispatcher("/page/thong_tin_khach_hang/thong_tin_khach_hang.jsp").forward(request, response);
