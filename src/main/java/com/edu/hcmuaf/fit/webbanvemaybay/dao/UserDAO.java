@@ -200,4 +200,47 @@ public class UserDAO extends DBContext {
             return false;
         }
     }
+    public User getUserByEmail(String email) {
+        try {
+            Jdbi jdbi = get();
+            return jdbi.withHandle(h -> {
+                String q = "select * from users where email=:email";
+                return h.createQuery(q).bind("email", email).mapToBean(User.class).findFirst().orElse(null);
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public boolean updatePassword(int userId, String newPassword) {
+        try {
+            org.jdbi.v3.core.Jdbi jdbi = get();
+            return jdbi.withHandle(h -> {
+                String q = "UPDATE users SET password = :password WHERE id = :id";
+                return h.createUpdate(q)
+                        .bind("password", newPassword)
+                        .bind("id", userId)
+                        .execute();
+            }) > 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    public String getPasswordById(int userId) {
+        try {
+            org.jdbi.v3.core.Jdbi jdbi = get();
+            return jdbi.withHandle(h -> {
+                String q = "SELECT password FROM users WHERE id = :id";
+                return h.createQuery(q)
+                        .bind("id", userId)
+                        .mapTo(String.class)
+                        .findFirst()
+                        .orElse(null);
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

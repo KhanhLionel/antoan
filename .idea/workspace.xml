@@ -9,7 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="623e0afe-a610-4432-8796-3465379c3a92" name="Changes" comment="tao file Model va Helper" />
+    <list default="true" id="623e0afe-a610-4432-8796-3465379c3a92" name="Changes" comment="tao file Model va Helper">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu/hcmuaf/fit/webbanvemaybay/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu/hcmuaf/fit/webbanvemaybay/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/list_ve_da_dat/list_ve_da_dat.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/list_ve_da_dat/list_ve_da_dat.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/thong_tin_khach_hang/thong_tin_khach_hang.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/thong_tin_khach_hang/thong_tin_khach_hang.jsp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,7 +90,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/toannhat/AnToan/antoan",
+    "last_opened_file_path": "/Users/toannhat/AnToan/antoan/src/main/webapp/assets",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -99,6 +104,15 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/assets" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/access" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Tomcat 11.0.22" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 11.0.22" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
@@ -212,7 +226,7 @@
       <workItem from="1781619279285" duration="6584000" />
       <workItem from="1781705387833" duration="5537000" />
       <workItem from="1781755959866" duration="5049000" />
-      <workItem from="1781873301952" duration="539000" />
+      <workItem from="1781873301952" duration="4621000" />
     </task>
     <task id="LOCAL-00001" summary="tao file Model va Helper">
       <option name="closed" value="true" />
@@ -231,6 +245,17 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="tao file Model va Helper" />
     <option name="LAST_COMMIT_MESSAGE" value="tao file Model va Helper" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/webapp/page/list_ve_da_dat/list_ve_da_dat.jsp</url>
+          <line>9</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
