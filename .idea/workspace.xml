@@ -11,8 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="623e0afe-a610-4432-8796-3465379c3a92" name="Changes" comment="tao file Model va Helper">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu/hcmuaf/fit/webbanvemaybay/controllers/HuyVeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu/hcmuaf/fit/webbanvemaybay/controllers/HuyVeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/edu/hcmuaf/fit/webbanvemaybay/models/Key/UserKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/edu/hcmuaf/fit/webbanvemaybay/models/Key/UserKey.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -226,7 +224,7 @@
       <workItem from="1781705387833" duration="5537000" />
       <workItem from="1781755959866" duration="5049000" />
       <workItem from="1781873301952" duration="6317000" />
-      <workItem from="1781949061389" duration="302000" />
+      <workItem from="1781949061389" duration="1475000" />
     </task>
     <task id="LOCAL-00001" summary="tao file Model va Helper">
       <option name="closed" value="true" />
