@@ -1,6 +1,7 @@
 package com.edu.hcmuaf.fit.webbanvemaybay.models.Key;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 public class UserKey {
     private int id;
@@ -107,4 +108,10 @@ public class UserKey {
     public void setNgayThuHoi(Timestamp ngayThuHoi) {
         this.ngayThuHoi = ngayThuHoi;
     }
+
+    public void setUserId(int userId) {
+        this.id = userId;
+    }
+    public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
+
 }
