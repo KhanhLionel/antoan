@@ -29,6 +29,42 @@
         <c:choose>
             <c:when test="${not empty listVeDaDat}">
                 <c:forEach var="item" items="${listVeDaDat}">
+            <div class="booked-card">
+                <div class="booked-header" style="display: flex; justify-content: space-between; align-items: flex-start;">
+                    <div class="airline-brand">
+                        <span class="plane-icon">✈</span>
+                        <span class="airline-name">${item.veDto.hangBay}</span>
+                    </div>
+
+                    <div class="booking-status-wrapper" style="display: flex; flex-direction: column; align-items: flex-end; gap: 5px;">
+                        <div class="booking-status" style="background-color: #2ecc71; color: white; padding: 3px 8px; border-radius: 4px; font-size: 11px; font-weight: bold;">
+                            Đã đặt thành công
+                        </div>
+
+                        <c:choose>
+                            <c:when test="${item.signatureStatus == 1}">
+                                <div class="sig-status valid" style="background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: bold; display: inline-flex; align-items: center; gap: 4px;">
+                                    Chữ ký số: HỢP LỆ
+                                </div>
+                            </c:when>
+                            <c:when test="${item.signatureStatus == 2}">
+                                <div class="sig-status tampered" style="background-color: #f8d7da; color: #721c24; border: 2px solid #f5c6cb; padding: 6px 12px; border-radius: 4px; font-size: 11px; font-weight: bold; display: inline-flex; align-items: center; gap: 4px; animation: blinker 1.5s linear infinite;">
+                                    CẢNH BÁO: Thông tin bị thay đổi trái phép!
+                                </div>
+                                <style>
+                                    @keyframes blinker {
+                                        50% { opacity: 0.3; }
+                                    }
+                                </style>
+                            </c:when>
+                            <c:otherwise>
+                                <div class="sig-status unsigned" style="background-color: #e2e3e5; color: #383d41; border: 1px solid #d6d8db; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: bold;">
+                                    Chưa bảo mật bằng chữ ký số
+                                </div>
+                            </c:otherwise>
+                        </c:choose>
+                    </div>
+                </div>
                     <div class="flight-card">
                         <div class="card-header">
                             <span class="airline-name">
